@@ -35,6 +35,11 @@ body, html {
     padding-top: 5px;
 }
 
+dt {
+	display: flex;
+    justify-content: space-between;
+}
+
 dl {
 	overflow-y: auto;
     max-height: 25vh;

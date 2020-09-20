@@ -82,3 +82,9 @@ button:active {
 button:focus {
 	outline: none;
 }
+
+.color_box {
+	width: 2em;
+    height: 1em;
+    border-radius: 5px;
+}

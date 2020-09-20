@@ -31,7 +31,7 @@ class Route {
 
 	Element = () => {
 		let route = "";
-		route += `<dt class = "title">${this.name}</dt>`;
+		route += `<dt class = "title">${this.name} <div class = "color_box" style="background-color: ${this.color}"></div></dt>`;
 		route += `<dd class = "sub-title"> Has ${size(this.waypoints)} waypoints.</dd>`;
 		return route;
 	}
