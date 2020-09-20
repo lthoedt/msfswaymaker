@@ -36,4 +36,11 @@ class Waypoint {
 		waypoint += `<dd class = "text">Type: ${this.type}</dd>`;
 		return waypoint;
 	}
+
+	set pos(pos){};
+
+	get pos() {
+		return this.marker._latlng;
+	}
+
 }

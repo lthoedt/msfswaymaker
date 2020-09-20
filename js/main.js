@@ -12,7 +12,6 @@ const updateUi = () => {
 $("#selectorRoute select").on("change", function () {
 	selectedRoute = user.routes[$(this).val()];
 	updateUi();
-	// $(this).val(selectedRoute);
 })
 
 $("#createRouteButton").on("click", (e) => {

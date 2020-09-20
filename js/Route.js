@@ -2,6 +2,7 @@ class Route {
 	constructor( name = `route${Object.keys(user.routes).length}` ) {
 		this.name = name;
 		this.waypoints = {};
+		this.color = '#' + Math.random().toString(16).slice(2, 8).toUpperCase();
 		return this;
 	}
 
