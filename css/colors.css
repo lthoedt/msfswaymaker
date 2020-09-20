@@ -1,0 +1,157 @@
+/* === Main colors  === */
+
+:root {
+
+    --color-blue-light: #007bff;
+	--color-blue-dark: #0a84ff;
+	
+	--color-green-light: #34c759;
+	--color-green-dark: #30d158;
+	
+	--color-indigo-light: #5856d6;
+	--color-indigo-dark: #5e5ce6;
+	
+	--color-orange-light: #ff9500;
+	--color-orange-dark: #ff9f0a;
+	
+	--color-pink-light: #ff2d55;
+	--color-pink-dark: #ff375f;
+	
+	--color-purple-light: #af52de;
+	--color-purple-dark: #bf5af2;
+	
+	--color-red-light: #ff3b30;
+	--color-red-dark: #ff453a;
+	
+	--color-teal-light: #5ac8fa;
+	--color-teal-dark: #64d2ff;
+	
+	--color-yellow-light: #ffcc00;
+	--color-yellow-dark: #ffd60a;
+	/* end */
+
+	--color-gray-light: #8e8e93;
+	--color-gray-dark: #8e8e93;
+	
+	--color-gray2-light: #aeaeb2;
+	--color-gray2-dark: #636366;
+	
+	--color-gray3-light: #c7c7cc;
+	--color-gray3-dark: #48484a;
+	
+	--color-gray4-light: #d1d1d6;
+	--color-gray4-dark: #3a3a3c;
+	
+	--color-gray5-light: #e5e5ea;
+	--color-gray5-dark: #2c2c2e;
+
+	--color-gray6-light: #f2f2f7;
+	--color-gray6-dark: #1c1c1e;
+	
+	/* web */
+	--color-web-blue-light: #0062CC;
+	--color-web-blue-dark: #0063C6;
+	
+	--color-web-green-light: #2A9F47;
+	--color-web-green-dark: #25A65D;
+	
+	--color-web-indigo-light: #24238E;
+	--color-web-indigo-dark: #18168E;
+	
+	--color-web-orange-light: #CC7700;
+	--color-web-orange-dark: #C67800;
+	
+	--color-web-pink-light: #B10022;
+	--color-web-pink-dark: #AB0022;
+	
+	--color-web-purple-light: #6B1C93;
+	--color-web-purple-dark: #650C92;
+	
+	--color-web-red-light: #AF0900;
+	--color-web-red-dark: #A90900;
+	
+	--color-web-teal-light: #056895;
+	--color-teal-dark: #006690;
+	
+	--color-web-yellow-light: #CCA300;
+	--color-web-yellow-dark: #C6A500;
+	/* end web */
+	
+	--color-web-gray-light: #565E61;
+	--color-web-gray-dark: #565E61;
+	
+	--color-web-gray2-light: #454A4D;
+	--color-web-gray2-dark: #4C5255;
+	
+	--color-web-gray3-light: #363B3D;
+	--color-web-gray3-dark: #373C3E;
+	
+	--color-web-gray4-light: #313537;
+	--color-web-gray4-dark: #2C3032;
+	
+	--color-web-gray5-light: #25282A;
+	--color-web-gray5-dark: #222526;
+	
+	--color-web-gray6-light: #1E2022;
+	--color-web-gray6-dark: #161819;
+
+}
+
+/* === scrollbalk === */
+/* Turn on custom 8px wide scrollbar */
+::-webkit-scrollbar {
+	width: 10px; /* 1px wider than Lion. */
+	/* This is more usable for users trying to click it. */
+	background-color: rgba(0,0,0,0);
+	-webkit-border-radius: 100px;
+}
+
+/* hover effect for both scrollbar area, and scrollbar 'thumb' */
+::-webkit-scrollbar:hover {
+	background-color: rgba(0, 0, 0, 0.09);
+}
+
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+::-webkit-scrollbar-thumb:vertical {
+	/* This is the EXACT color of Mac OS scrollbars.
+		Yes, I pulled out digital color meter */
+	background: rgba(0,0,0,0.5);
+	-webkit-border-radius: 100px;
+	background-clip: padding-box;
+	border: 2px solid rgba(0, 0, 0, 0);
+	min-height: 10px; /*Prevent it from getting too small */
+}
+::-webkit-scrollbar-thumb:vertical:active {
+	background: rgba(0,0,0,0.61); /* Some darker color when you click it */
+	-webkit-border-radius: 100px;
+}
+
+
+/* === scrollbalk === */
+/* Turn on custom 8px wide scrollbar */
+::-webkit-scrollbar {
+	width: 10px; /* 1px wider than Lion. */
+	/* This is more usable for users trying to click it. */
+	background-color: rgba(0,0,0,0);
+	-webkit-border-radius: 100px;
+}
+
+/* hover effect for both scrollbar area, and scrollbar 'thumb' */
+::-webkit-scrollbar:hover {
+	background-color: rgba(0, 0, 0, 0.09);
+}
+
+/* The scrollbar 'thumb' ...that marque oval shape in a scrollbar */
+::-webkit-scrollbar-thumb:vertical {
+	/* This is the EXACT color of Mac OS scrollbars.
+		Yes, I pulled out digital color meter */
+	background: rgba(0,0,0,0.5);
+	-webkit-border-radius: 100px;
+	background-clip: padding-box;
+	border: 2px solid rgba(0, 0, 0, 0);
+	min-height: 10px; /*Prevent it from getting too small */
+}
+::-webkit-scrollbar-thumb:vertical:active {
+	background: rgba(0,0,0,0.61); /* Some darker color when you click it */
+	-webkit-border-radius: 100px;
+}

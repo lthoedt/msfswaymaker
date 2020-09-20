@@ -8,20 +8,111 @@
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
 	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
 	crossorigin=""/>
-	<link rel="stylesheet" href="main.css">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/css/uikit.min.css" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+
+	
+	<link rel="stylesheet" href="fonts/fonts.css">
+
+	<link rel="stylesheet" href="css/colors.css">
+	<link rel="stylesheet" href="css/light.css">
+	<link rel="stylesheet" href="css/config.css">
+
+	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
 
-	<div id="mapid"></div>
+	<nav class="uk-navbar-container uk-navbar-transparent" uk-navbar>
+		<div class="uk-navbar-left">
+
+			<a class = "uk-navbar-item" uk-toggle="target: #sidebar" type="anchor"><span class = "icon" uk-icon="menu"></span></a>
+	
+			<a class="uk-navbar-item uk-logo headline" href="#">MSFSwayMaker</a>
+
+		</div>
+
+		<div class="uk-navbar-center">
+			<div class="uk-button uk-form-select" id = "selectorRoute" data-uk-form-select>
+				<span class = "title">Selected route &nbsp;</span>
+				<select></select>
+			</div>
+			
+			<div class="uk-button">
+				<button href="#createRouteModal" uk-toggle>Create route</button>
+			</div>
+
+			<div class="uk-button uk-form-select" id = "selectorClickmode" data-uk-form-select>
+				<span>clickmode &nbsp;</span>
+				<select>
+					<option value="route1">Add waypoint</option>
+					<option value="route2">Remove waypoint</option>
+				</select>
+			</div>
+		</div>
+
+	</nav>
+
+	<div id="createRouteModal" uk-modal>
+		<div class="uk-modal-dialog">
+			<button class="uk-modal-close-default" type="button" uk-close></button>
+			<div class="uk-modal-header">
+				<h1 class="uk-modal-title headline">Create a route</h1>
+			</div>
+			<div class="uk-modal-body">
+				<input class = "uk-form-input" placeholder="Route name" type="text" name="route-name" id="input_route-name" maxlength="20" />
+				<button onclick='UIkit.modal("#createRouteModal").hide()' id = "createRouteButton">Create</button>
+			</div>
+		</div>
+	</div>
+
+	<main>
+		<div id="sidebar" uk-offcanvas="mode: push">
+			<div class="uk-offcanvas-bar sidebar text">
+	
+				<button class="uk-offcanvas-close" type="button" uk-close></button>
+				
+				<img class = "avatar" alt = "avatar picture" src = "https://www.kindpng.com/picc/m/21-214439_free-high-quality-person-icon-default-profile-picture.png"/>
+
+				<ul class="uk-list" id = "courses">
+					<li class="uk-nav-header headline">Your routes</li>
+					<dl class="uk-description-list-divider">
+						<span>You have no routes.</span>
+					</dl>
+				</ul>
+
+				<ul class="uk-list" id = "waypoints">
+					<li class="uk-nav-header headline">Route waypoints</li>
+					<dl class="uk-description-list-divider">
+						<span>This route has no waypoints.</span>
+					</dl>
+					
+				</ul>
+			</div>
+		</div>
+
+		<div id="mapid"></div>
+	</main>
+
 	
 	<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
 	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
 	crossorigin=""></script>
 
+
+	<!-- UIkit JS -->
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/uikit@3.5.7/dist/js/uikit-icons.min.js"></script>
+
+	<script
+	src="https://code.jquery.com/jquery-3.1.1.min.js"
+	integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="
+	crossorigin="anonymous"></script>
+
 	
+	<script src="js/Route.js"></script>
 	<script src="js/map.js"></script>
 	<script src="js/User.js"></script>
 	<script src="js/main.js"></script>
-	<script src="js/waypoint.js"></script>
+	<script src="js/Waypoint.js"></script>
 </body>
 </html>

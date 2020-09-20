@@ -5,8 +5,10 @@ class User {
 		this.routes = {};
 	}
 
-	createRoute( name = `route${Object.keys(this.routes).length}` ) {
-		this.routes[name] = {};
+	createRoute(name) {
+		const route = new Route(name);
+		this.routes[route.name] = route;
+		return route;
 	}
 
 	selectRoute(name) {

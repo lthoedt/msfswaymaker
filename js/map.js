@@ -22,8 +22,9 @@ const initMap = () => {
 			case "addWaypoints" :
 				const pos = e.latlng;
 				const wpt = new Waypoint(pos);
-				selectedRoute[wpt.name] = wpt;
+				selectedRoute.waypoints[wpt.name] = wpt;
 				L.marker([pos.lat, pos.lng]).addTo(map);
+				updateUi();
 			break;
 		}
 	}
