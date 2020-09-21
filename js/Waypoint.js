@@ -1,9 +1,19 @@
 class Waypoint {
-	constructor( pos, name = `wpt${Object.keys(selectedRoute.waypoints).length}`, type = "waypoint" ) {
+	constructor( pos, name = `wpt`, type = "NAMED", region = "TF", magvar = 0 ) {
 		this.pos = pos;
 		this.name = name;
 		this.type = type;
+		this.region = region;
+		this.magvar = magvar;
 
+		const n = this.name;
+		for ( const wpt of Object.keys(selectedRoute.waypoints) ) {
+			if ( wpt.includes(n) && (wpt.search("^"+n+"[0-9]$")==0 || wpt.search("^"+n+"$")==0 ) ) {
+				const number = wpt.replace(n, "");
+				this.name = n + ( (number.length>0) ? parseInt(number) + 1 : 1 );
+			}
+		}
+		
 		return this;
 	}
 
@@ -15,7 +25,7 @@ class Waypoint {
 		
 		const waypoints = selectedRoute.waypoints;
 		
-		if ( waypointsWrapper.children().length/3 == size(waypoints)) return undefined;
+		// if ( waypointsWrapper.children().length/3 == size(waypoints)) return undefined;
 
 		waypointsWrapper.children().remove();
 		
@@ -25,7 +35,7 @@ class Waypoint {
 			if (!Object.prototype.hasOwnProperty.call(waypoints, waypointname)) break;
 			const waypoint = waypoints[waypointname];
 			
-			waypointsWrapper.append(waypoint.Element());	
+			waypointsWrapper.append(waypoint.Element());
 		}
 	}
 
@@ -41,6 +51,21 @@ class Waypoint {
 
 	get pos() {
 		return this.marker._latlng;
+	}
+
+	static selectedPropertys = () => {
+		const name = $("#add_wpt-name").val();
+		const magvar = $("#add_wpt-magvar").val();
+		const type = $("#add_wpt-type select").val();
+		const region = $("#add_wpt-region select").val();
+
+		return {
+			name: (name != "" && name.length <= 5) ? name: undefined,
+			magvar: (magvar.length > 0 && magvar.length <= 5) ? magvar : undefined,
+			type: (type == "NAMED" || type == "UNNAMED") ? type : undefined,
+			region: (region.length == 2) ? region : undefined
+		};
+
 	}
 
 }

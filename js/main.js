@@ -25,7 +25,18 @@ $("#createRouteButton").on("click", (e) => {
 	updateUi();
 })
 
+$(document).ready(function(){
+	$.getJSON("legtypes.json", (legtypes) => {
+		for ( const legtype in legtypes ) {
+			$("#add_wpt-region select").append( optionElement(legtype, legtypes[legtype]) );
+		}
+	}).fail(function(err){
+		console.log(err);
+	});
+})
 
-
+const optionElement = ( value, tooltip, selected = false ) => {
+	return `<option value="${value}" ${(selected)? "selected":""} title="${tooltip}">${value}</option>`;
+}
 
 const size = (object) => Object.keys(object).length;

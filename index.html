@@ -50,6 +50,27 @@
 			</div>
 		</div>
 
+		<div class="uk-navbar-right" style = "max-width: 33vw;">
+			<input type="text" name="add_wpt-name" id="add_wpt-name" placeholder="Waypoint name" />
+
+			<input type="number" value="0" name="add_wpt-magvar" id="add_wpt-magvar" placeholder="Waypoint magvar" />
+
+			<div class="uk-button uk-form-select" id = "add_wpt-type" data-uk-form-select>
+				<span>Waypoint type &nbsp;</span>
+				<select>
+					<option value="NAMED">NAMED</option>
+					<option value="UNNAMED">UNNAMED</option>
+				</select>
+			</div>
+
+			<div class="uk-button uk-form-select" id = "add_wpt-region" data-uk-form-select>
+				<span>Waypoint region &nbsp;</span>
+				<select>
+
+				</select>
+			</div>
+		</div>
+
 	</nav>
 
 	<div id="createRouteModal" uk-modal>
@@ -71,7 +92,7 @@
 	
 				<button class="uk-offcanvas-close" type="button" uk-close></button>
 				
-				<img class = "avatar" alt = "avatar picture" src = "https://www.kindpng.com/picc/m/21-214439_free-high-quality-person-icon-default-profile-picture.png"/>
+				<!-- <img class = "avatar" alt = "avatar picture" src = "https://www.kindpng.com/picc/m/21-214439_free-high-quality-person-icon-default-profile-picture.png"/> -->
 
 				<ul class="uk-list" id = "courses">
 					<li class="uk-nav-header headline">Your routes</li>

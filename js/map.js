@@ -16,11 +16,11 @@ const initMap = () => {
 		switch(clickMode) {
 			case "addWaypoints" :
 				const pos = e.latlng;
-				const wpt = new Waypoint(pos);
+				const sp = Waypoint.selectedPropertys();
+				const wpt = new Waypoint(pos, sp.name, sp.type, sp.region, sp.magvar);
 				selectedRoute.waypoints[wpt.name] = wpt;
 				wpt.marker = addMarker(e, map, wpt);
 				updateUi();
-				
 			break;
 		}
 	}
@@ -70,7 +70,7 @@ const initMap = () => {
 					draggable: true,
 					icon: icon,
 	
-				}).bindPopup(`${e.latlng}<br><input type='button' value='Delete this marker' class='marker-delete-button'/>`);
+				}).bindPopup(`${e.latlng}<br><input type='button' value='Delete this marker' name="${wpt.name}" class='marker-delete-button'/>`);
 	
 				if (wpt) marker.bindTooltip(`${selectedRoute.name} - ${wpt.name}`, {permanent: true, direction: "right"}).openTooltip();
 				
@@ -89,10 +89,13 @@ const initMap = () => {
 		// To remove marker on click of delete button in the popup of marker
 		$(".marker-delete-button:visible").click(function () {
 			map.removeLayer(tempMarker);
+			delete selectedRoute.waypoints[$(this).attr("name")];
+			updateUi();
 		});
 	}
 
 	map.on('click', onMapClick);
+	$("#mapid").mouseup(updateUi);
 }
 
 
