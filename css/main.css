@@ -52,3 +52,12 @@ dl {
 .notification-succes {
 	color: var(--color-web-green-dark);
 }
+
+.clickable {
+	cursor: pointer;
+	transition-duration: 150ms;
+}
+
+.clickable:hover {
+	opacity: 0.5;
+}

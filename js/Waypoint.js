@@ -68,4 +68,8 @@ class Waypoint {
 
 	}
 
+	toXML() {
+		return `<Waypoint lat="${this.pos.lat}" lon="${this.pos.lng}" magvar="${this.magvar}" waypointType="${this.type}" waypointRegion="${this.region}" waypointIdent="${this.name}"/>`;
+	}
+
 }

@@ -86,6 +86,22 @@
 		</div>
 	</div>
 
+	<div id="editRouteModal" uk-modal>
+		<div class="uk-modal-dialog">
+			<button class="uk-modal-close-default" type="button" uk-close></button>
+			<div class="uk-modal-header">
+				<h1 class="uk-modal-title headline">Route management</h1>
+			</div>
+			<div class="uk-modal-body">
+				<input class = "uk-form-input" placeholder="Route name" type="text" name="edit-route-name" id="input_edit_route-name" maxlength="20" />
+			</div>
+			<div class="uk-modal-footer">
+				<button onclick='UIkit.modal("#editRouteModal").hide()' id = "editRouteButton">Edit</button>
+				<button onclick='UIkit.modal("#editRouteModal").hide()' id = "xmlRouteButton">Make XML</button>
+			</div>
+		</div>
+	</div>
+
 	<main>
 		<div id="sidebar" uk-offcanvas="mode: push">
 			<div class="uk-offcanvas-bar sidebar text">

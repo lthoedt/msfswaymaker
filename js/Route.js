@@ -31,13 +31,27 @@ class Route {
 
 	Element = () => {
 		let route = "";
-		route += `<dt class = "title">${this.name} <div class = "color_box" style="background-color: ${this.color}"></div></dt>`;
-		route += `<dd class = "sub-title"> Has ${size(this.waypoints)} waypoints.</dd>`;
+		route += `<div onclick="routeManagement(this)" class = "clickable" id = "${this.name}" href="#editRouteModal" uk-toggle>`;
+			route += `<dt class = "title">${this.name} <div class = "color_box" style="background-color: ${this.color}"></div></dt>`;
+			route += `<dd class = "sub-title"> Has ${size(this.waypoints)} waypoints.</dd>`;
+		route += `</div>`;
 		return route;
 	}
 
 	ElementSelector = () => {
 		if (size(user.routes)==1) selectedRoute = this;
 		return `<option ${(size(user.routes)==1 || selectedRoute.name==this.name)?"selected":""} value="${this.name}">${this.name}</option>`;
+	}
+
+	toXML = () => {
+		let wptsXML = "";
+		for ( const wptName in this.waypoints ) {
+			wptsXML += this.waypoints[wptName].toXML();
+		}
+		return wptsXML;
+	}
+
+	edit = ( name ) => {
+		this.name = (name!=undefined && name!=null && name!="" && name.length<20) ? name : this.name;
 	}
 }

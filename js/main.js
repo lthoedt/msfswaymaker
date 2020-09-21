@@ -39,4 +39,22 @@ const optionElement = ( value, tooltip, selected = false ) => {
 	return `<option value="${value}" ${(selected)? "selected":""} title="${tooltip}">${value}</option>`;
 }
 
+const routeManagement = (e) => {
+	const routeName = $(e).attr("id");
+	const route = user.routes[routeName];
+	const modal = $("#editRouteModal");
+	modal.find(".uk-modal-title").html(`Management of route: ${route.name} <div class = "color_box" style="background-color: ${route.color}"></div>`);
+	$("#input_edit_route-name").val(route.name);
+	$("#editRouteButton").val(route.name);
+}
+
+$("#editRouteButton").on("click", (e) => {
+	const newName = $("#input_edit_route-name").val();
+	user.routes[e.target.value].edit( newName );
+	$(`#${e.target.value}`).attr("id", newName);
+	user.routes[newName] = user.routes[e.target.value];
+	delete user.routes[e.target.value];
+	$(e.target).val(newName);
+});
+
 const size = (object) => Object.keys(object).length;
