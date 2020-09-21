@@ -4,6 +4,8 @@ const waypoints = {};
 let clickMode = "addWaypoints";
 let selectedRoute = null;
 
+let currentEditRoute;
+
 const updateUi = () => {
 	Route.updateUi();
 	Waypoint.updateUi();
@@ -42,6 +44,7 @@ const optionElement = ( value, tooltip, selected = false ) => {
 const routeManagement = (e) => {
 	const routeName = $(e).attr("id");
 	const route = user.routes[routeName];
+	currentEditRoute = route;
 	const modal = $("#editRouteModal");
 	modal.find(".uk-modal-title").html(`Management of route: ${route.name} <div class = "color_box" style="background-color: ${route.color}"></div>`);
 	$("#input_edit_route-name").val(route.name);
@@ -50,11 +53,20 @@ const routeManagement = (e) => {
 
 $("#editRouteButton").on("click", (e) => {
 	const newName = $("#input_edit_route-name").val();
+	if (newName==e.target.value) return undefined;
 	user.routes[e.target.value].edit( newName );
 	$(`#${e.target.value}`).attr("id", newName);
 	user.routes[newName] = user.routes[e.target.value];
 	delete user.routes[e.target.value];
 	$(e.target).val(newName);
 });
+
+const showXML = () => {
+	let xml = '';
+	xml += `<textarea style = "white-space: pre-wrap; width: -webkit-fill-available; min-height: 40vh;">`;
+		xml += currentEditRoute.toXML();
+	xml += `</textarea>`;
+	$("#xmlOutput").html(xml);
+}
 
 const size = (object) => Object.keys(object).length;

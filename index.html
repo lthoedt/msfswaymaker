@@ -94,10 +94,11 @@
 			</div>
 			<div class="uk-modal-body">
 				<input class = "uk-form-input" placeholder="Route name" type="text" name="edit-route-name" id="input_edit_route-name" maxlength="20" />
+				<div id="xmlOutput"></div>
 			</div>
 			<div class="uk-modal-footer">
 				<button onclick='UIkit.modal("#editRouteModal").hide()' id = "editRouteButton">Edit</button>
-				<button onclick='UIkit.modal("#editRouteModal").hide()' id = "xmlRouteButton">Make XML</button>
+				<button onclick='showXML()' id = "xmlRouteButton">Make XML</button>
 			</div>
 		</div>
 	</div>
