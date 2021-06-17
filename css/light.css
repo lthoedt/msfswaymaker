@@ -1,0 +1,9 @@
+:root {
+	--color-background: #FFFFFF;
+
+	/* ========= font colors ========= */
+	--color-font-label: #000000;
+	--color-font-secondaryLabel: #ACACAE;
+	--color-font-tertiaryLabel: #CBCBCD;
+	--color-font-quaternaryLabel: #E0E0E1;
+}

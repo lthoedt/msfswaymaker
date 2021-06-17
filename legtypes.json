@@ -1,0 +1,26 @@
+{
+	"TF": "track to Fix",
+	"PI": "Procedure turn to Intercept",
+	"IF": "Initial Fix",
+	"CA": "Course to Altitude",
+	"HF": "Hold to Fix",
+	"HA": "Hold to Altitude",
+	"HM": "Hold to Manual termination",
+	"CI": "Course to Intercept",
+	"DF": "Direct to Fix",
+	"CD": "Course to DME termination",
+	"FA": "Fix to altitude",
+	"CR": "Course to Radial interception",
+	"CF": "course to Fix",
+	"FC": "Fix to distance on Course",
+	"FD": "Fix to DME termination",
+	"VI": "Heading to next leg Intercept",
+	"FM": "Fix to Manual termination",
+	"VR": "Heading to Radial termination",
+	"AF": "Arc to a fix",
+	"RF": "Radius to a Fix",
+	"VD": "Heading to DME distance",
+	"VA": "Heading to Altitude",
+	"VM": "Heading to Manual temrination"
+	
+}

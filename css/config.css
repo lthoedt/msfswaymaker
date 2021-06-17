@@ -1,0 +1,90 @@
+body, html {
+	background-color: var(--color-background);
+}
+
+* {
+	font-family: 'HelveticaNeueCyr';
+	color: var(--color-font-label);
+	text-transform: none;
+
+}
+
+h1 {
+	color: var(--color-font-label);
+}
+
+input {
+	color: var(--color-font-label);
+    padding: 0.5em 1em 0.5em 1em;
+    border-radius: 5px;
+    outline: none;
+	border: 1px solid var(--color-gray2-light);
+	background-color: var(--color-gray5-light);
+	transition-duration: 100ms;
+
+	font-size: 1em;
+}
+
+input:focus {
+    background-color: var(--color-gray3-light);
+}
+
+input::placeholder {
+	color: var(--color-font-secondaryLabel);
+}
+
+a,button {
+	color: var(--color-blue-light);
+}
+
+.headline {
+	font-family: 'HelveticaNeueCyr';
+	color: var(--color-font-label);
+	font-weight: 500;
+	font-size: 1.5em;
+	text-transform: none;
+}
+
+.title {
+	font-family: 'HelveticaNeueCyr';
+	color: var(--color-font-label);
+	font-weight: 400;
+}
+
+.sub-title {
+	font-family: 'HelveticaNeueCyr';
+	color: var(--color-font-label);
+	font-weight: 300;
+}
+
+.text {
+	font-family: 'HelveticaNeueCyr';
+	color: var(--color-font-secondaryLabel);
+	font-weight: 300;
+}
+
+button {
+	border: none;
+	border-radius: 5px;
+	padding: 0.5em 1em 0.5em 1em;
+	cursor: pointer;
+	transition-duration: 100ms;
+}
+
+button:hover {
+	opacity: 0.7;
+}
+
+button:active {
+	opacity: 0.5;
+}
+
+button:focus {
+	outline: none;
+}
+
+.color_box {
+	width: 2em;
+    height: 1em;
+    border-radius: 5px;
+}
